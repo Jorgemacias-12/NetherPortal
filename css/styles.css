@@ -1,5 +1,21 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 966px;
+    background-color: #fff;
+}
+
+#content {
+    width: 50%;
+    height: 600px;
+    background-color: #fff;
+    border: 1px solid rgba(225, 225, 226, 0.8);
 }
