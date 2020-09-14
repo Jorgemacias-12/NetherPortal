@@ -5,7 +5,8 @@ function getNewCoords(){
     var ocoordz = document.getElementById("coord-z").value;
     if(ocoordX == "")
     {
-        
+        errDiv.classList.add("errors");
+        errDiv.style.display="block";
     }
     else if(ocoordZ == "")
     {
