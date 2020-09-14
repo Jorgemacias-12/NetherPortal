@@ -34,6 +34,11 @@ body {
     margin-bottom: 10px;
 }
 
+#content input[type="text"] {
+    width: 20%;
+    height: 25px;
+}
+
 #content input[type="text"], #content button {
     display: block;
     margin: 0 auto;
@@ -51,4 +56,23 @@ body {
 #content button:hover{
     box-shadow: 0px 0px 5px inset #ccc;
     cursor: pointer;
+}
+
+.result {
+    width: 50%;
+    height: 150px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #2EA44F;
+}
+
+.errors {
+    display: none;
+    width: 50%;
+    height: 150px;
+    background-color: #bb2929;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
 }
