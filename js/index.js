@@ -1,11 +1,11 @@
 function getNewCoords(){
-    var divER = document.getElementById("reContainer");
+    let errDiv = document.getElementById("eContainer");
+    let resultDiv = document.getElementById("rContainer");
     var ocoordX = document.getElementById("coord-x").value;
     var ocoordz = document.getElementById("coord-z").value;
     if(ocoordX == "")
     {
-        divER.classList.add("errors"); 
-        divER.style.display="block";
+        
     }
     else if(ocoordZ == "")
     {
