@@ -20,27 +20,25 @@ function getNewCoords(){
             document.getElementById("eContainer").style.display = "flex";
             document.getElementById("errorMessage").innerHTML = "Error: Los campos estan vacios.";
         }
+        if (isNaN(inputCoordX) && !isNaN(inputCoordZ)) {
+            document.getElementById("eContainer").style.display = "flex";
+            document.getElementById("errorMessage").innerHTML = "Error: el campo x no contiene números."
+        }
+        else if (!isNaN(inputCoordX) && isNaN(inputCoordZ)) {
+            document.getElementById("eContainer").style.display = "flex";
+            document.getElementById("errorMessage").innerHTML = "Error: el campo z no contiene números."
+        }
+        else if (isNaN(inputCoordX) && isNaN(inputCoordZ)) {
+            document.getElementById("eContainer").style.display = "flex";
+            document.getElementById("errorMessage").innerHTML = "Error: Ninguno de los campos contiene números.";
+        }
+        else
+        {
+            document.getElementById("rContainer").style.display = "flex";
+            document.getElementById("resultMessage").innerHTML = "X: " + (inputCoordX / 8) + "  Z: " + (inputCoordZ / 8);
+        }
     }
     
-    if(isNaN(inputCoordX) && !isNaN(inputCoordZ))
-    {
-        document.getElementById("eContainer").style.display="flex";
-        document.getElementById("errorMessage").innerHTML="Error: el campo x no contiene números."
-    }
-    else if (!isNaN(inputCoordX) && isNaN(inputCoordZ))
-    {
-        document.getElementById("eContainer").style.display = "flex";
-        document.getElementById("errorMessage").innerHTML = "Error: el campo z no contiene números."
-    }
-    else if (isNaN(inputCoordX) && isNaN(inputCoordZ))
-    {
-        document.getElementById("eContainer").style.display="flex";
-        document.getElementById("errorMessage").innerHTML="Error: Ninguno de los campos contiene números.";
-    }
-
-    document.getElementById("rContainer").style.display="flex";
-    document.getElementById("resultMessage").innerHTML="X: "+(inputCoordX / 8)+"  Z: "+(inputCoordZ / 8);
-
 }
 
 function hideError()
