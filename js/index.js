@@ -1,12 +1,13 @@
 function getNewCoords(){
-    let errDiv = document.getElementById("eContainer");
-    let resultDiv = document.getElementById("rContainer");
+    var errDiv = document.getElementById("eContainer");
+    var resultDiv = document.getElementById("rContainer");
     var ocoordX = document.getElementById("coord-x").value;
     var ocoordZ = document.getElementById("coord-z").value;
     if(ocoordX == "")
     {
+        errDiv.classList.remove("none");
         errDiv.classList.add("errors");
-        errDiv.style.display="block";
+        document.getElementById("errorMessage").innerHTML="Campo coordenada x vacío";
     }
     else if(ocoordZ == "")
     {
@@ -30,7 +31,7 @@ function getNewCoords(){
     }
     else
     {
-        
+
     }
 }
 
