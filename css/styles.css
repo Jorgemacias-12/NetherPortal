@@ -69,6 +69,10 @@ body {
     background-color: #2EA44F;
 }
 
+.none{
+    display: none;
+}
+
 .errors {
     display: flex;
     flex-flow: column wrap;
