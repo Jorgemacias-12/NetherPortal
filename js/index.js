@@ -21,3 +21,8 @@ function getNewCoords(){
 
     }
 }
+
+function hideError()
+{
+
+}
