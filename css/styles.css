@@ -39,6 +39,14 @@ body {
     height: 25px;
 }
 
+#content input[type="text"]:hover {
+    border: 1px solid #4F75E5;
+}
+
+#content input[type="text"]:focus {
+    border: 1px solid #4F75E5;
+}
+
 #content input[type="text"], #content button {
     display: block;
     margin: 0 auto;
