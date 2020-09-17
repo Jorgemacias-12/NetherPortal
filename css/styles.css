@@ -68,13 +68,21 @@ body {
 
 .result {
     display: none;
+    flex-flow: column wrap;
+    flex-basis: 100%;
     width: 50%;
     height: 100px;
     line-height: 100px;
     margin: auto;
     margin-top: 20px;
-    text-align: center;
     background-color: #2EA44F;
+    color: white;
+}
+
+.resultMessage{
+    height: 82px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .errors {
