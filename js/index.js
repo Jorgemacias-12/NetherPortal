@@ -38,7 +38,9 @@ function getNewCoords(){
             document.getElementById("resultMessage").innerHTML = "X: " + (inputCoordX / 8) + "  Z: " + (inputCoordZ / 8);
         }
     }
-    
+    // Limpiar los campos de texto.
+    document.getElementById("coord-x").value="";
+    document.getElementById("coord-z").value="";
 }
 
 function hideError()
