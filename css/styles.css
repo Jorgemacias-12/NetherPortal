@@ -71,7 +71,7 @@ body {
     flex-flow: column wrap;
     flex-basis: 100%;
     width: 50%;
-    height: 100px;
+    height: 130px;
     line-height: 100px;
     margin: auto;
     margin-top: 20px;
@@ -80,8 +80,9 @@ body {
 }
 
 .resultMessage{
-    height: 82px;
+    height: 60px;
     text-align: center;
+    line-height: 60px;
     font-weight: bold;
 }
 
@@ -104,11 +105,18 @@ body {
 }
 
 .errorMessage {
-    height: 82px;
+    height: 60px;
     text-align: center;
     line-height: 82px;
     font-family: Verdana;
     font-size: 16px;
     font-weight: bolder;
     color: white;
+}
+
+.title{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
 }
