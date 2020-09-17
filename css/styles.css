@@ -70,12 +70,28 @@ body {
 }
 
 .errors {
-    display: none;
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 100%;
     width: 50%;
     height: 100px;
-    line-height: 100px;
     background-color: #bb2929;
     margin: auto;
     margin-top: 20px;
+}
+
+.fa-times {
+    margin-top: 1px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.errorMessage {
+    height: 82px;
     text-align: center;
+    line-height: 82px;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
 }
