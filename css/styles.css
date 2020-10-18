@@ -90,11 +90,13 @@ input[type="text"]:hover, input[type="text"]:focus {
 }
 
 #errorContainer {
+    display: none;
     background-color: #bb2929;
     margin-bottom: 10px;
 }
 
 #resultContainer {
+    display: none;
     background-color: #28A745;
     margin-top: 10px;
 }
