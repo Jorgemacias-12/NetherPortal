@@ -3,6 +3,19 @@
     padding: 0px;
 }
 
+h1 {
+    font-family: Arial;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+label{
+    font-size: 20px;
+    font-family: Arial;
+    text-align: center;
+}
+
 #mainContainer {
     width: 100%;
     height: 900px;
