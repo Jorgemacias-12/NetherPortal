@@ -69,13 +69,14 @@ input[type="text"]:hover, input[type="text"]:focus {
     font-family: 'Trebuchet MS';
     text-align: center;
     width: 40%;
-    height: 120px;
+    height: 180px;
     display: flex;
     flex-direction: column;
 }
 
 .closeIcon{
     display: flex;
+    cursor: pointer;
 }
 
 .text{
@@ -84,6 +85,8 @@ input[type="text"]:hover, input[type="text"]:focus {
     text-align: justify;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 5px;
+    color: white;
 }
 
 #errorContainer {
