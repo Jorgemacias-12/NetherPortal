@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, userscalable=no">
+    <link rel="shortcut icon" href="resources/netherrack.pnggit" type="image/png">
     <title>¿Cómo conectar portales del Nether?</title>
 </head>
     <body>
-            <div id="mainContainer">
-                
+        <div id="mainContainer">
+            <div id="mainFrame">
+                <h1>Concetar portales del nether</h1>
+                <label for="" class="label">
+                    Coordenada X:
+                </label>
+                <input type="text" id="netherCoord-x">
+                <label for="" class="label">
+                    Coordenada Z:
+                </label>   
+                <input type="text" id="netherCoord-z">
+                <button onclick="">
+                    Calcular coordenadas
+                </button>
+                <div id="errorContainer">
+                    <img src="resources/close.png">
+                    <span id="error-title">
+
+                    </span>
+                </div>
+                <div id="resultContainer">
+                    <img src="resources/close.png">
+                    <span id="result-title">
+
+                    </span>
+                </div>
             </div>
+        </div>
     </body>
 </html>
