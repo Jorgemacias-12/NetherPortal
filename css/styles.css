@@ -33,4 +33,11 @@ label{
     height: 600px;
     display: flex;
     flex-flow: column;
+    align-items: center;
+}
+
+input[type="text"]{
+    width: 20%; 
+    padding: 5px;
+    border: 1px solid black;
 }
