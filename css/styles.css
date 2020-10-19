@@ -82,7 +82,7 @@ input[type="text"]:hover, input[type="text"]:focus {
 .text{
     height: 100%;
     word-wrap: wrap;
-    text-align: justify;
+    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -93,6 +93,7 @@ input[type="text"]:hover, input[type="text"]:focus {
     display: none;
     background-color: #bb2929;
     margin-bottom: 10px;
+    height: 75px;
 }
 
 #resultContainer {
