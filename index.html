@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, userscalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="shortcut icon" href="resources/netherrack.png" type="image/png">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -21,11 +21,11 @@
                     Coordenada Z:
                 </label>   
                 <input type="text" id="netherCoord-z">
-                <button onclick="">
+                <button onclick="transformCoords()">
                     Calcular coordenadas
                 </button>
                 <div id="errorContainer" class="container">
-                    <span class="closeIcon">
+                    <span class="closeIcon" onclick="hideContainer('errorContainer')">
                         <img src="resources/close.png">
                     </span>
                     <span id="error-title" class="text">
@@ -33,7 +33,7 @@
                     </span>
                 </div>
                 <div id="resultContainer" class="container">
-                    <span class="closeIcon">
+                    <span class="closeIcon" onclick="hideContainer('resultContainer')">
                         <img src="resources/close.png">
                     </span>
                     <span id="result-title" class="text">
