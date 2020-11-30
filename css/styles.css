@@ -45,107 +45,160 @@ p {
     height: 100px;
 }
 
-.main__container-appContainer {
-    background-color: #1E1E1E;
+.main__container-form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: calc(100% - 100px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.appContainer__app-form {
-    background-color: #24292E;
-    width: 50%;
+.container__form-app {
+    width: 60%;
     height: 90%;
-    margin-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.app__form-center {
-    background-color: transparent;
-    width: 80%;
+.app__content-form {
+    background-color: #24292E;
+    width: 70%;
     height: 80%;
 }
 
-.form__center-label {
-    margin: 10px;
+.form__component-label {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
-.component__title-label {
-    display: block;
+.form__component-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.app__form-label {
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     color: white;
-    text-align: center;
 }
 
-.form__center-input {
-    text-align: center;
-}
-
-.component__coord-input {
-    display: block;
-    margin: 0 auto;
-    width: 35%;
+.app__form-input {
+    border: 1px solid green;
+    color: white;
+    background-color: #303030;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS';
+    width: 30%;
     height: 35px;
 }
 
-.appContainer__app-prevCoords {
-    background-color: #24292E;
-    width: 25%;
-    height: 90%;
-    margin-left: 20px;
+.input__error-icon {
+    background-image: url("/resources/delete.png");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    padding-right: 30px;
+    border: 2px solid #c10606;
 }
 
-.app__prevCoords-areaContainer {
+.app__form-input:hover {
+    border: 2px solid #0a79ff
+}
+
+.app__form-input:focus {
+    border: 2px solid #0a79ff
+}
+
+.form__input-error {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #c10606;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+    display: none;
+}
+
+.input__error-show {
+    display: block;
+}
+
+.form__component-button {
+    margin-top: 30px;
+}
+
+.app__form-button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-family: arial;
+    background-color: #1e1e1e;
+    width: 25%;
+    height: 40px;
+}
+
+.app__form-button:hover {
+    box-shadow: 0px 0px 5px inset #ccc;
+    cursor: pointer;
+}
+
+.form__container-results {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 250px;
+}
+
+.form__components-results {
+    display: none;
+    flex-flow: column;
+    width: 35%;
+    height: 50%;
+    background-color: #b21414;
+}
+
+.close {
+    width: 100%;
+    height: 24px;
+}
+
+.close__component-icon {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #E1E4E8;
+    font-size: 18px;
+}
+
+.close__component-icon:hover{
+    color: #101010;
+    cursor: pointer;
+}
+
+.results__component-text {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    font-weight: normal;
+    color: white;
+}
+
+.container__form-history {
+    background-color: #24292E;
+    width: 30%;
     height: 90%;
-}
-
-.form__center-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.component__proc-button {
-    width: 20%;
-    height: 35px;
-}
-
-.form__input-errorMessage {
-    color: red;
 }
 
 /*
     Section de Id's
 */
-
-#prevCoords-section {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: sans-serif;
-    text-align: center;
-    color: white;
-    display: block;
-}
-
-#prevCoords-textarea {
-    color: white;
-    border: none;
-    background-color: #1E1E1E;
-    width: 85%;
-    height: 90%;
-    font-family: sans-serif;
-    font-size: 14spx;
-    font-weight: bold;
-    resize: none;
-    padding: 10px;
-}

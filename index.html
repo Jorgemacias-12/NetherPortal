@@ -17,59 +17,67 @@
             </div>
             <!-- #endregion -->
             <!-- #region components of the app-->
-            <div class="main__container-appContainer">
-                <div class="appContainer__app-form">
-                    <div class="app__form-center">
-                        <div class="form__center-label">
-                            <label for="" class="component__title-label">
-                                Coordenada X:
-                            </label>
-                        </div>
+            <div class="main__container-form">
+                <div class="container__form-app">
+                    <div class="app__content-form">
+                            <div class="form__component-label">
+                                <label for="" class="app__form-label">
+                                    Coordenada X:
+                                </label>
+                            </div>
+                            
+                            <div class="form__component-input">
+                                <input type="text" class="app__form-input">
+                                <span class="form__input-error">
+                                    ssdsd
+                                </span>
+                            </div>
+                            
+                            <div class="form__component-label">
+                                <label for="" class="app__form-label">
+                                    Coordenada Z:
+                                </label>
+                            </div>
+                            
+                            <div class="form__component-input">
+                                <input type="text" class="app__form-input">
+                                <span class="form__input-error">
+                                    Campo vació.
+                                </span>
+                            </div>
+                            
+                            <div class="form__component-button">
+                                <button class="app__form-button">
+                                    Calcular coordenadas
+                                </button>
+                            </div>
 
-                        <div class="form__center-input">
-                            <input type="text" class="component__coord-input">
-                            <i class="form__input-icon">
+                            <div class="form__container-results">
+                                <div class="form__components-results">
+                                    <div class="close">
+                                        <span class="fa fa-times close__component-icon" id="result__close-button">
+                                        </span>
+                                    </div>
+                                    <p class="results__component-text">
+                                       Coordenadas:
+                                    </p>
+                                    <p class="results__component-text">
+                                    </p>
+                                </div>
+                            </div>
 
-                            </i>
-                            <span class="form__input-errorMessage">
-                                
-                            </span>
-                        </div>
-
-                        <div class="form__center-label">
-                            <label for="" class="component__title-label">
-                                Coordenada Z:
-                            </label>
-                        </div>
-
-                        <div class="form__center-input">
-                            <input type="text" class="component__coord-input">
-                            <i class="form__input-icon">
-
-                            </i>
-                            <span class="form__input-errorMessage">
-
-                            </span>
-                        </div>
-
-                        <div class="form__center-button">
-                            <button class="component__proc-button">
-                                Nuevas coordenadas
-                            </button>
-                        </div>
                     </div>
                 </div>
-                <div class="appContainer__app-prevCoords">
-                    <span id="prevCoords-section">
-                        Historial de coordenadas
-                    </span>
-                    <div class="app__prevCoords-areaContainer">
-                        <textarea name="" id="prevCoords-textarea" cols="0" rows="0" disabled></textarea>
-                    </div>
+                <div class="container__form-history">
+
                 </div>
             </div>
             <!-- #endregion -->
         </div>
+        <!-- #endregion -->
+        <!-- #region icons font awesome-->
+        <script src="https://kit.fontawesome.com/7f4f5e3479.js" crossorigin="anonymous">
+        </script>
         <!-- #endregion -->
     </body>
 </html>
