@@ -51,7 +51,7 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 100px)
 }
 
 .container__form-app {
@@ -160,14 +160,15 @@ p {
 }
 
 .form__components-results {
-    display: none;
+    display: flex;
     flex-flow: column;
     width: 35%;
     height: 50%;
-    background-color: #b21414;
+    background-image: linear-gradient(#FF887B, #B42E5D);
 }
 
-.close {
+.close__coords {
+    display: flex;
     width: 100%;
     height: 24px;
 }
@@ -181,6 +182,22 @@ p {
 
 .close__component-icon:hover {
     color: #101010;
+    cursor: pointer;
+}
+
+.close__history{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.coord__history-close {
+    padding-top: 5px;
+    padding-right: 5px;
+    color: #E1E4E8;
+}
+
+.coord__history-close:hover {
+    color: black;
     cursor: pointer;
 }
 
@@ -218,20 +235,19 @@ p {
 
 .component-history-coords {
     background: #1e1e1e;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: block;
     width: 80%;
     height: 90%;
 }
 
 .container__history-coords {
-    background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(#bb2929, #9198e5);
+    display: block;
+    margin: auto;
     width: 90%;
     height: 100px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /*
