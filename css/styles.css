@@ -73,6 +73,10 @@
     grid-area: content;
 }
 
+.coords-form {
+
+}
+
 .coords {
     grid-area: coords;
 }
