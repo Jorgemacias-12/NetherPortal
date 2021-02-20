@@ -156,6 +156,28 @@
     height: 70%;
 }
 
+.result-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+}
+
+.result {
+    background-color: #4BCA81;
+    width: 50%;
+    height: 60%;
+}
+
+.closeable {
+    height: 30%;
+}
+
+.success-text {
+    height: 70%;
+    line-height: 50px;
+}
+
 .input {
     width: 30%;
     height: 30px;
