@@ -40,7 +40,37 @@
 
         <div class="content">
             <form action="" id="form" class="coords-form" onsubmit="return false;">
+                <div class="os-container">
+                    <p class="text">
+                        Convertir coordenadas
+                    </p>
+                    <select id="operation-value" class="select">
+                            <option value="ow" selected> Overworld a Nether</option>
+                            <option value="ne" > Nether a Overworld </option>
+                    </select>
+                </div>
+                <div class="data-container">
+                    <div class="inputGroup">
+                        <label for="cord-x" class="text">
+                            Coordenada X:
+                        </label>
+                        <input type="text" class="input" id="cord-x">
+                    </div>
 
+                    <div class="inputGroup">
+                        <label for="cord-z" class="text">
+                            Coordenada Z:
+                        </label>
+                        <input type="text" class="input" id="cord-z">
+                    </div>
+
+                    <div class="buttonGroup">
+                        <button class="button" id="btn-cord">
+                            Mostrar coordenadas
+                        </button>
+                    </div>
+
+                </div>
             </form>
         </div>
 
@@ -49,5 +79,6 @@
         </section>
 
     </div>
+    <script src="https://kit.fontawesome.com/7f4f5e3479.js" crossorigin="anonymous"></script>
 </body>
 </html>
