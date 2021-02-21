@@ -106,7 +106,6 @@
     color: white;
     font-weight: bold;
     border: 1px solid cyan;
-    border-right: unset;
 }
 
 .data-container {
@@ -223,5 +222,31 @@
 }
 
 .coords {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     grid-area: coords;
+}
+
+.coords-title {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.coords-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 2%;
+    width: 80%;
+    height: 80%;
+    background-color: #24292e;
+}
+
+.history {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+    height: 15%;
+    background-color: #99e;
 }
