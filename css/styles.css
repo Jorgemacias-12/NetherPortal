@@ -257,6 +257,7 @@
 }
 
 ::-webkit-scrollbar-button:single-button {
+    background-color: #1e1e1e;
     display: block;
     border-style: solid;
     height: 13px;
