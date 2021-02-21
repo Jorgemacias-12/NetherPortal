@@ -106,6 +106,13 @@
     color: white;
     font-weight: bold;
     border: 1px solid cyan;
+    -moz-appearance: none;
+    -moz-padding-end: 20px;
+    -moz-padding-start: 2px;
+}
+
+.select > .opt {
+    color: black;
 }
 
 .data-container {
