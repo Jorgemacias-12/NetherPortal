@@ -1,3 +1,6 @@
+const errors = [];
+const results = [];
+
 window.onload = () => {
     getNewCoords();
 }
@@ -28,6 +31,7 @@ setInputFilter(document.getElementById("cord-z"), function (value) {
 });
 
 const getNewCoords = () => {
+    deleteErrors();
     let form = document.forms['form'];
     let optionValue;
     let coord_x;
@@ -38,12 +42,47 @@ const getNewCoords = () => {
         coord_z = form['cord-z'].value;
         if (coord_x != "" && coord_z != "") {
             if (optionValue == "ow") {
-                
+
             } else if (optionValue == "ne") {
-        
+
             }
         } else {
-            
+            if (coord_x == "" && coord_z != "") {
+                errors.push(new Error("El campo x esta vacio"));
+                createElement();
+            } else if (coord_z == "" && coord_x != "") {
+                errors.push(new Error("El campo z esta vacio"));
+                createElement();
+            }
+            if (coord_x == "" && coord_z == "") {
+                errors.push(new Error("Los campos estan vacios"));
+                createElement();
+            }
         }
     });
+}
+
+const closeError = () => {
+    document.getElementById("c-error").innerHTML = "";
+}
+
+const createElement = () => {
+    let errorHTML = '';
+    for (let error of errors) {
+        errorHTML = `
+                        <div class="error">
+                            <div class="closeable">
+                                <i class="fas fa-times icon" onclick='closeError()'></i>
+                            </div>
+                            <p class="text error-text">
+                                Error: ${error.message}
+                            </p>
+                        </div>
+        `
+    }
+    document.getElementById("c-error").innerHTML = errorHTML;
+}
+
+const deleteErrors = () => {
+    document.getElementById("c-error").innerHTML = "";
 }
