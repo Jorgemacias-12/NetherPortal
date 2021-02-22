@@ -31,7 +31,6 @@ setInputFilter(document.getElementById("cord-z"), function (value) {
 });
 
 const getNewCoords = () => {
-    deleteErrors();
     let form = document.forms['form'];
     let optionValue;
     let coord_x;
@@ -42,7 +41,7 @@ const getNewCoords = () => {
         coord_z = form['cord-z'].value;
         if (coord_x != "" && coord_z != "") {
             if (optionValue == "ow") {
-                
+                owToNe(coord_x, coord_z);
             } else if (optionValue == "ne") {
 
             }
@@ -59,7 +58,13 @@ const getNewCoords = () => {
                 createElement();
             }
         }
+        setTimeout(clearFields, 3000);
     });
+}
+
+const clearFields = () => {
+    document.getElementById("cord-x").value = '';
+    document.getElementById("cord-z").value = '';
 }
 
 const closeError = () => {
@@ -82,3 +87,63 @@ const createElement = () => {
     }
     document.getElementById("c-error").innerHTML = errorHTML;
 }
+
+const deleteManager = (id) => {
+    let resultIndex = results.findIndex(results => results.id === id);
+    results.splice(resultIndex, 1);
+    includeToHistory();
+}
+
+const createResultElement = (resultObject) => {
+    let resultHTML = `
+                <div class="history">
+                    <div class="closeable">
+                        <i class="fas fa-times icon"
+                        onclick='deleteManager(${resultObject.id})'></i>    
+                    </div>
+                    <p class="text success-text">
+                        Coordenadas: [X: ${resultObject.x}, Z: ${resultObject.z}]
+                    </p>
+                </div>
+
+
+    `;
+    return resultHTML;
+}
+
+const includeToHistory = () => {
+    let resultHTML = '';
+    for (let result of results) {
+        resultHTML += createResultElement(result);
+    }
+    document.getElementById("coords-history").innerHTML = resultHTML;
+}
+
+const owToNe = (coord_x, coord_z) => {
+    let resultHTML;
+    let result_coords = [];
+    result_coords[0] =  parseFloat(coord_x / 8);
+    result_coords[1] = parseFloat(coord_z / 8);
+    results.push(new Coordinate(result_coords[0], result_coords[1]));
+    resultHTML = `
+                        <div class="result">
+                            <div class="closeable">
+                                <i class="fas fa-times icon"
+                                onclick='closeError()'></i>
+                            </div>
+                            <p class="text success-text">
+                                Resultado: [ X: ${result_coords[0]}, Z: ${result_coords[1]}]
+                            </p>
+                        </div>
+
+    `;
+    document.getElementById("c-error").className = "result-container";
+    document.getElementById("c-error").innerHTML = resultHTML;
+    setTimeout(includeToHistory, 3000);
+    setTimeout(closeError,3000);
+}
+
+const neToOw = (coord_x, coord_z) => {
+
+}
+
