@@ -1,5 +1,49 @@
 @media (max-width: 800px) {
-    *{
-        background-color: blue;
+    .app {
+        display: grid;
+        grid-template-areas: "header" "content" "coords";
+        grid-template-columns: 100%;
+        grid-template-rows: 100px auto;
     }
+
+    .header {
+        flex-flow: column;
+    }   
+
+    .header > .title-container {
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+    }
+
+    .header > .menu-container{
+        width: 100%;
+        height: 50%;
+    }
+
+    .menu-container > .ul {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .coords-form {
+        width: 60%;
+        height: 70%;
+    }
+
+    .os-container {
+        height: 15%;
+    }
+
+    .select {
+        width: 38%;
+    }
+
+    .linputGroup {
+
+    }
+
+
 }
