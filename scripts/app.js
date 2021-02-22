@@ -42,7 +42,7 @@ const getNewCoords = () => {
         coord_z = form['cord-z'].value;
         if (coord_x != "" && coord_z != "") {
             if (optionValue == "ow") {
-
+                
             } else if (optionValue == "ne") {
 
             }
@@ -81,8 +81,4 @@ const createElement = () => {
         `
     }
     document.getElementById("c-error").innerHTML = errorHTML;
-}
-
-const deleteErrors = () => {
-    document.getElementById("c-error").innerHTML = "";
 }
