@@ -109,7 +109,21 @@
         margin-right: 0px;
         width: 48%;
     }
-    
+    .input {
+        width: 35%;
+    }
+    .button {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .error-container {
+        margin-top: 2px;
+    }
+    .error {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 414px) {
