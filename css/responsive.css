@@ -63,6 +63,9 @@
         width: 100%;
         padding: 5px;
     }
+    .select {
+        font-size: 15px;
+    }
     .inputGroup {
         height: 22%;
     }
@@ -90,24 +93,33 @@
 
 @media screen and (max-width: 506px) {
     .page-title {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width: 476px) {
     .link {
-        font-size: 14px;
+        font-size: 12px;
     }
+    .text:first-child {
+        font-size: 12px;
+    }
+    .select {
+        margin-left: 15px;
+        margin-right: 0px;
+        width: 48%;
+    }
+    
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 414px) {
     .app {
         grid-template-rows: 15% 45% 40%;
     }
-    .header > .title-container{
+    .header>.title-container {
         height: 30%;
     }
-    .header > .menu-container {
+    .header>.menu-container {
         height: auto;
     }
     .page-title {
@@ -116,7 +128,29 @@
     .link {
         font-size: 12px;
     }
-    .menu-container > .ul {
+    .menu-container>.ul {
+        height: 100%;
+        flex-flow: column;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .app {
+        grid-template-rows: 15% 45% 40%;
+    }
+    .header>.title-container {
+        height: 30%;
+    }
+    .header>.menu-container {
+        height: auto;
+    }
+    .page-title {
+        font-size: 12px;
+    }
+    .link {
+        font-size: 12px;
+    }
+    .menu-container>.ul {
         height: 100%;
         flex-flow: column;
     }
