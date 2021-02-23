@@ -3,7 +3,7 @@
         display: grid;
         grid-template-areas: "header" "content" "coords";
         grid-template-columns: 100%;
-        grid-template-rows: 100px auto;
+        grid-template-rows: 10% 50% 40%;
     }
 
     .header {
@@ -29,8 +29,8 @@
     }
 
     .coords-form {
-        width: 60%;
-        height: 70%;
+        width: 70%;
+        height: 80%;
     }
 
     .os-container {
@@ -38,12 +38,34 @@
     }
 
     .select {
-        width: 38%;
+        width: 40%;
     }
 
-    .linputGroup {
-
+    .input {
+        margin: 0px;
     }
 
+    .error-container {
+        margin-top: 20px;
+    }
+
+    .error {
+        width: 65%;
+    }
+
+    .result {
+        width: 80%;
+        align-items: center;
+        height: 80%;
+    }
+
+    .success-text {
+        font-family: 15px;
+    }
+
+    .history {
+        width: 80%;
+        height: 35%;
+    }
 
 }
