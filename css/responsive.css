@@ -5,67 +5,119 @@
         grid-template-columns: 100%;
         grid-template-rows: 10% 50% 40%;
     }
-
     .header {
         flex-flow: column;
-    }   
-
-    .header > .title-container {
+    }
+    .header>.title-container {
         width: 100%;
         height: 50%;
         justify-content: center;
     }
-
-    .header > .menu-container{
+    .header>.menu-container {
         width: 100%;
         height: 50%;
     }
-
-    .menu-container > .ul {
+    .menu-container>.ul {
         width: 100%;
         height: 100%;
         justify-content: center;
         align-items: center;
     }
-
     .coords-form {
         width: 70%;
         height: 80%;
     }
-
     .os-container {
         height: 15%;
     }
-
     .select {
         width: 40%;
     }
-
     .input {
         margin: 0px;
     }
-
     .error-container {
         margin-top: 20px;
     }
-
     .error {
         width: 65%;
     }
-
     .result {
         width: 80%;
         align-items: center;
         height: 80%;
     }
-
     .success-text {
         font-family: 15px;
     }
-
     .history {
         width: 80%;
         height: 35%;
     }
+}
 
+@media screen and (max-width: 547px) {
+    .link {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+    .inputGroup {
+        height: 22%;
+    }
+    .inputGroup>.text {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .buttonGroup {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .coords-form {
+        width: 80%;
+    }
+    .error-container {
+        height: 25%;
+    }
+    .error {
+        width: 75%;
+    }
+    .success-text {
+        line-height: 36px;
+    }
+}
+
+@media screen and (max-width: 506px) {
+    .page-title {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 476px) {
+    .link {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .app {
+        grid-template-rows: 15% 45% 40%;
+    }
+    .header > .title-container{
+        height: 30%;
+    }
+    .header > .menu-container {
+        height: auto;
+    }
+    .page-title {
+        font-size: 12px;
+    }
+    .link {
+        font-size: 12px;
+    }
+    .menu-container > .ul {
+        height: 100%;
+        flex-flow: column;
+    }
 }
