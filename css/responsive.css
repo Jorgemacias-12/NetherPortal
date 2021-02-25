@@ -124,6 +124,9 @@
     .error {
         width: 80%;
     }
+    .success-text {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 414px) {
@@ -145,6 +148,9 @@
     .menu-container>.ul {
         height: 100%;
         flex-flow: column;
+    }
+    .success-text {
+        font-size: 14px;
     }
 }
 
