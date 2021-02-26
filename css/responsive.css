@@ -1,4 +1,53 @@
-@media (max-width: 800px) {
+@media screen and (max-width: 1280px) {
+    .app {
+        grid-template-columns: 65% 35%;
+    }
+    .title-container {
+        width: auto;
+    }
+    .menu-container {
+        width: 60%;
+    }
+    .ul {
+        justify-content: flex-end;
+    }
+    .coords-form {
+        height: 65%;
+    }
+    .select {
+        width: 40%;
+        height: 30px;
+    }
+    .input {
+        margin: 0px;
+    }
+    .buttonGroup {
+        margin-top: 10px;
+    }
+    .error-container {
+        height: 20%;
+        margin-top: 5px;
+    }
+    .error {
+        width: 60%;
+    }
+    .error-text {
+        font-size: 16px;
+    }
+    .result-container {
+        margin-top: 5px;
+    }
+    .result {
+        width: 60%;
+        height: 80%;
+    }
+    .success-text {
+        font-size: 15px;
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .app {
         display: grid;
         grid-template-areas: "header" "content" "coords";
@@ -154,6 +203,12 @@
     }
 }
 
+@media screen and (max-width: 375px) {
+    .error>.error-text {
+        font-size: 16px;
+    }
+}
+
 @media screen and (max-width: 360px) {
     .app {
         grid-template-rows: 15% 45% 40%;
@@ -176,7 +231,7 @@
     }
 }
 
-@media screen and (max-height: 650px) {
+@media screen and (max-height: 650px) and (max-width: 506px) {
     .app {
         grid-template-rows: 20% 40% 40%;
     }
