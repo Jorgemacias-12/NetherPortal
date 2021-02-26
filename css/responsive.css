@@ -175,3 +175,30 @@
         flex-flow: column;
     }
 }
+
+@media screen and (max-height: 650px) {
+    .app {
+        grid-template-rows: 20% 40% 40%;
+    }
+    .coords-form {
+        margin-top: 20px;
+        height: 90%;
+    }
+    .select {
+        font-size: 12px;
+        height: 30px;
+    }
+    .buttonGroup {
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+    .button {
+        width: auto;
+        height: auto;
+        font-size: 14px;
+    }
+    .inputGroup>.text {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+}
