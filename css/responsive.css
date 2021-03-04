@@ -43,7 +43,6 @@
     }
     .success-text {
         font-size: 15px;
-        overflow: scroll;
     }
 }
 
@@ -97,7 +96,7 @@
         height: 80%;
     }
     .success-text {
-        font-family: 15px;
+        font-size: 15px;
     }
     .history {
         width: 80%;
