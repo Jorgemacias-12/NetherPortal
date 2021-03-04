@@ -256,57 +256,6 @@
     width: 18px;
 }
 
-::-webkit-scrollbar-button:single-button {
-    background-color: #1e1e1e;
-    display: block;
-    border-style: solid;
-    height: 13px;
-    width: 16px;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:decrement {
-    border-width: 0 8px 8px 8px;
-    border-color: transparent transparent #555555 transparent;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-    border-color: transparent transparent #777777 transparent;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:increment {
-    border-width: 8px 8px 0 8px;
-    border-color: #555555 transparent transparent transparent;
-}
-
-::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-    border-color: #777777 transparent transparent transparent;
-}
-
-::-webkit-scrollbar-button:single-button {
-    display: block;
-    border-style: solid;
-    height: 13px;
-    width: 16px;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:decrement {
-    border-width: 0 8px 8px 8px;
-    border-color: transparent transparent #555555 transparent;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-    border-color: transparent transparent #777777 transparent;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:increment {
-    border-width: 8px 8px 0 8px;
-    border-color: #555555 transparent transparent transparent;
-}
-
-::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-    border-color: #777777 transparent transparent transparent;
-}
-
 *::-webkit-scrollbar-track {
     background: #121212;
 }
