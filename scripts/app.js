@@ -1,40 +1,37 @@
 const errors = [];
 const results = [];
 
-window.onload = () => {
-    getNewCoords();
+const createAndShowError = () => {
+
 }
-const getNewCoords = () => {
-    let form = document.forms['form'];
-    let optionValue;
-    let coord_x;
-    let coord_z;
-    form['btn-cord'].addEventListener("click", () => {
-        optionValue = form['operation-value'].value;
-        coord_x = form['cord-x'].value;
-        coord_z = form['cord-z'].value;
-        if (coord_x != "" && coord_z != "") {
-            if (optionValue == "ow") {
-                owToNe(coord_x, coord_z);
-            } else if (optionValue == "ne") {
-                neToOw(coord_x, coord_z);
-            }
-        } else {
-            if (coord_x == "" && coord_z != "") {
-                errors.push(new Error("El campo x esta vacio"));
-                createElement();
-            } else if (coord_z == "" && coord_x != "") {
-                errors.push(new Error("El campo z esta vacio"));
-                createElement();
-            }
-            if (coord_x == "" && coord_z == "") {
-                errors.push(new Error("Los campos estan vacios"));
-                createElement();
-            }
-        }
-        setTimeout(clearFields, 3000);
+
+const createAndShowResult = (operationOption) => {
+
+}
+
+const validateValues = (cordinate_x, cordinate_z, operationOption) => {
+    if (cordinate_x == "") { errors.push(new Error("El campo x esta vacio")); createAndShowError(); }
+    if (cordinate_z == "") { errors.push(new Error("El campo z esta vacio")); createAndShowError(); }
+    if (cordinate_x == "" && cordinate_z == "") {
+        errors.push(new Error("Los campos estan vacios")); createAndShowError();
+    }
+    if (cordinate_x != "" && cordinate_z != "") { }
+}
+
+const initApp = () => {
+    document.getElementById("btn-cord").addEventListener("click", () => {
+        let operationOption = document.getElementById('operation-value').value;
+        let input_x_value = document.getElementById('cord-x').value;
+        let input_z_value = document.getElementById('cord-z').value;
+        validateValues(input_x_value, input_z_value, operationOption);
     });
 }
+
+window.onload = () => {
+    initApp();
+}
+
+// Sección vieja del archivo
 
 const clearFields = () => {
     document.getElementById("cord-x").value = '';
@@ -96,7 +93,7 @@ const includeToHistory = () => {
 const owToNe = (coord_x, coord_z) => {
     let resultHTML;
     let result_coords = [];
-    result_coords[0] =  parseFloat(coord_x / 8);
+    result_coords[0] = parseFloat(coord_x / 8);
     result_coords[1] = parseFloat(coord_z / 8);
     results.push(new Coordinate(result_coords[0], result_coords[1]));
     resultHTML = `
@@ -114,7 +111,7 @@ const owToNe = (coord_x, coord_z) => {
     document.getElementById("c-error").className = "result-container";
     document.getElementById("c-error").innerHTML = resultHTML;
     setTimeout(includeToHistory, 1000);
-    setTimeout(closeError,3000);
+    setTimeout(closeError, 3000);
 }
 
 const neToOw = (coord_x, coord_z) => {
