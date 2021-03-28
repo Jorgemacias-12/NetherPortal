@@ -18,6 +18,7 @@
 }
 
 .app {
+    overflow: hidden;
     display: grid;
     grid-template-areas: "header header" "content coords";
     grid-template-columns: 70% 30%;
