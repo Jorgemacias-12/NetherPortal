@@ -15,10 +15,14 @@ function setInputFilter(textbox, inputFilter) {
     });
 }
 
-setInputFilter(document.getElementById("coord-x"), function (value) {
-    return /^-?\d*[.,]?\d*$/.test(value);
-});
+document.addEventListener('DOMContentLoaded', () => {
 
-setInputFilter(document.getElementById("coord-z"), function (value) {
-    return /^-?\d*[.,]?\d*$/.test(value);
-});
+    setInputFilter(document.getElementById("coord-x"), function (value) {
+        return /^-?\d*[.,]?\d*$/.test(value);
+    });
+
+    setInputFilter(document.getElementById("coord-z"), function (value) {
+        return /^-?\d*[.,]?\d*$/.test(value);
+    });
+
+})
