@@ -1,0 +1,59 @@
+@media screen and (max-width: 480px) {
+    
+    h1#title {
+        font-size: 1.2rem;
+    }
+
+    main.main-content {
+        grid-template-columns: 100%;
+        justify-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    article.content#form {
+        margin: 1.5rem 0px;
+        width: 90%;
+    }
+
+    h2#form-title {
+        font-size: 1.2rem;
+    }
+
+    input.input {
+        width: 60%;
+        height: 50px;
+    }
+
+    button.button {
+        width: auto;
+        padding: 10px;
+        height: 45px;
+    }
+
+    section#popup-container {
+        width: 90%;
+    }
+
+    aside.content#records {
+        width: 90%;
+    }
+
+    h2#records-title {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+
+}
