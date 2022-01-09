@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --header-bg: #076af0;
+    --border-bg: #0066FF;
+    --base-bg: #202020;
+    --lvl2-bg: #303030;
+    --text-fg: #FFFFFF;
+    --text-hv: #000;
+    --select-bg: #4E598C;
+    --btn-bg: #20A4F3;
+    --error-bg: #EF3038;
+    --result-bg: #1ED760;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background-color: var(--header-bg);
+}
+
+h1#title {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-fg);
+    font-weight: bold;
+}
+
+main.main-content {
+    background-color: var(--base-bg);
+    display: grid;
+    grid-template-columns: 65% 30%;
+    justify-content: center;
+    height: calc(100vh - 60px);
+}
+
+.content {
+    background-color: var(--lvl2-bg);
+    margin-top: 20px;
+}
+
+article.content#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    height: 50vh;
+    margin-left: 10vw;
+    margin-top: 2vw;
+}
+
+h2#form-title {
+    color: var(--text-fg);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+select#component-op {
+    border: 0px;
+    border-radius: 20rem;
+    padding: 10px;
+    width: auto;
+    cursor: pointer;
+    background-color: var(--select-bg);
+    color: var(--text-fg);
+    text-align: center;
+}
+
+
+label.label {
+    color: var(--text-fg);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: text;
+}
+
+input.input {
+    width: 30%;
+    height: 40px;
+    border: 2px solid transparent;
+    margin: 10px;
+    background-color: var(--base-bg);
+    color: var(--text-fg);
+    font-family: "Roboto", sans-serif;
+    padding-left: 10px;
+}
+
+input.input:hover {
+    border: 2px solid var(--border-bg);
+    transition: 0.2s all;
+}
+
+input.input:focus-visible {
+    border: 2px solid var(--border-bg);
+}
+
+button.button {
+    background-color: var(--btn-bg);
+    padding: 10px;
+    border-radius: 1rem;
+    border: 0px;
+    width: 15%;
+    color: var(--text-fg);
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button.button:active {
+    transform: scale(0.9);
+}
+
+section#popup-container {
+    height: 70px;
+    width: 40%;
+    margin-top: 20px;
+}
+
+section.error {
+    width: 100%;
+    height: 100%;
+    background-color: var(--error-bg);
+    color: var(--text-fg);
+    font-family: 'Roboto', sans-serif;
+    animation: enter 0.2s ease-in-out;
+}
+
+div.icon-container {
+    height: 30px;
+}
+
+i.icon {
+    margin: 5px 0px 0px 5px;
+}
+
+i.icon:active {
+    color: var(--text-hv);
+    transform: scale(0.9);
+}
+
+i.icon:hover {
+    color: var(--text-hv);
+    cursor: pointer;
+}
+
+p.text#error-text {
+    width: 100%;
+    text-align: center;
+    height: 40px;
+}
+
+@keyframes enter {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes exit {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+section.result {
+    height: 70px;
+    background-color: var(--result-bg);
+    color: var(--text-hv);
+    font-family: 'Roboto', sans-serif;
+    animation: enter 0.2s ease-in-out;
+}
+
+div.close-container {
+    height: 30px;
+}
+
+p#result-text {
+    height: 40px;
+    text-align: center;
+}
+
+aside.content#records {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 90vh;
+    color: var(--text-fg);
+}
+
+h2#records-title {
+    color: var(--text-fg);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+section#records-info {
+    width: 90%;
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+
+p.information#records-count {
+    font-size: 20px;
+    text-align: center;
+}
+
+section#records-wrapper {
+    width: 90%;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
