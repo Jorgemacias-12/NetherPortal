@@ -1,5 +1,5 @@
-@media screen and (max-width: 480px) {
-    
+@media screen and (max-width: 768px) and (min-width: 320px) {
+
     h1#title {
         font-size: 1.2rem;
     }
@@ -22,7 +22,7 @@
 
     input.input {
         width: 60%;
-        height: 50px;
+        height: 40px;
     }
 
     button.button {
@@ -42,18 +42,19 @@
     h2#records-title {
         font-size: 1.2rem;
     }
-
-
 }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (min-width: 769px) and (max-width: 1200px) {}
 
-}
+@media screen and (min-width: 1201px) and (max-width: 1600px) {}
 
-@media screen and (min-width: 769px) and (max-width: 1200px) {
 
-}
+@media (max-height: 700px) {
 
-@media screen and (min-width: 1201px) and (max-width: 1600px) {
+    article.content#form {
+        margin: 1.5rem 0px;
+        width: 90%;
+        height: 80vh;
+    }
 
 }
