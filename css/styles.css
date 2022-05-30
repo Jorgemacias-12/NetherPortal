@@ -1,21 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-    --header-bg: #076af0;
-    --border-bg: #0066FF;
-    --base-bg: #202020;
-    --lvl2-bg: #303030;
-    --text-fg: #FFFFFF;
-    --text-hv: #000;
-    --select-bg: #4E598C;
-    --btn-bg: #20A4F3;
-    --error-bg: #EF3038;
-    --result-bg: #1ED760;
+    --header-bgc-p: #5600FF;
+    --primary-color-fg: white;
+    --secondary-color-fg: black;
+    --primary-color-hv: #793fff;
+    --secondary-color: #F96E46;
+    --error-color: #B00020;
+    --list-hover-bg: #ccc;
+    --theme-sun-hv: #f7df1e;
+    --theme-moon-hv: black;
+    --theme-dark-bg: #303030;
+    --theme-dark-border: #373e47;
+    --theme-light-border: #d8dee4;
+    --theme-light-bg: #FAFAFA;
+    --theme-light-bg-lvl2: #ececec;
+    --theme-light-shadow: .4rem 1rem 2.5rem -1rem rgba(0,0,0,0.75);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
+/* Body */
+
+body {
+    overflow-x: hidden;
+}
+
+/* Header section */
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: var(--header-bgc-p);
+    height: 4rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+#header-icon {
+    padding-left: 1rem;
+}
+
+#header-menu {
+    color: var(--primary-color-fg); 
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+#header-menu:hover {
+    transition: 0.2s color;
+    cursor: pointer;
+}
+
+#header-menu:hover#header-menu[data-color="0"] {
+    color: var(--theme-sun-hv);
+}
+
+#header-menu:hover#header-menu[data-color="1"] {
+    color: var(--theme-moon-hv);
+}
+
+.title {
+    color: var(--primary-color-fg);
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Nav section */
+
+.nav {
+    padding-right: 2rem;
+}
+
+.nav-link {
+    color: var(--primary-color-fg);
+    text-decoration: none;
+    padding: 1rem;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    border-radius: 5rem;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-color-hv);
+    transition: .2s background-color;
 }
