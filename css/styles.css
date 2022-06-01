@@ -15,7 +15,10 @@
     --theme-light-border: #d8dee4;
     --theme-light-bg: #FAFAFA;
     --theme-light-bg-lvl2: #ececec;
-    --theme-light-shadow: .4rem 1rem 2.5rem -1rem rgba(0,0,0,0.75);
+    --theme-light-shadow: .4rem 1rem 2.5rem -1rem rgba(0, 0, 0, 0.75);
+    --theme-light--tab-hv: rgba(0, 0, 0, 0.75);
+    --input--hv-color: #06f;
+    --button-bg: #6E44FF;
 }
 
 /* Body */
@@ -28,7 +31,7 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     background-color: var(--header-bgc-p);
     height: 4rem;
@@ -36,7 +39,7 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
 
@@ -45,7 +48,7 @@ body {
 }
 
 #header-menu {
-    color: var(--primary-color-fg); 
+    color: var(--primary-color-fg);
     padding-left: 1rem;
     font-size: 1.5rem;
 }
@@ -88,3 +91,4 @@ body {
     background-color: var(--primary-color-hv);
     transition: .2s background-color;
 }
+
