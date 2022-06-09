@@ -7,6 +7,10 @@
     --primary-color-hv: #793fff;
     --secondary-color: #F96E46;
     --error-color: #B00020;
+    --error-border: #FA5F55;
+    --result-color: #198754;
+    --result-shadow: 0 0 0 0.25rem
+    rgb(25 135 84 / 50%);
     --list-hover-bg: #ccc;
     --theme-sun-hv: #f7df1e;
     --theme-moon-hv: black;
@@ -15,16 +19,51 @@
     --theme-light-border: #d8dee4;
     --theme-light-bg: #FAFAFA;
     --theme-light-bg-lvl2: #ececec;
-    --theme-light-shadow: .4rem 1rem 2.5rem -1rem rgba(0, 0, 0, 0.75);
-    --theme-light--tab-hv: rgba(0, 0, 0, 0.75);
-    --input--hv-color: #06f;
+    --theme-light-shadow: .4rem 1rem 2.5rem -1rem
+    rgba(0, 0, 0, 0.75);
+    --theme-light--tab-hv:
+    rgba(0, 0, 0, 0.75);
+    --input--hv-color: #0d6efd;
+    --input-placeholder-color: #E1E1E1;
+    --input-focus-shadow: 0 0 0 0.25rem
+    rgb(13 110 253 / 50%);
     --button-bg: #6E44FF;
+    --button-shadow-bg: 0 0 0 0.25rem
+    rgb(110 68 255 / 50%);
+    --scrollbar-color: #1ed760;
+    --scrollbar-bg: #FAFAFA;
+    --component-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --record-bg: #6b7fd7;
+    --record-close-bg: rgba(255,255,255, 0.25);
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 10px;
+    border: 3px solid #ffffff;
 }
 
 /* Body */
 
 body {
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* Header section */
@@ -92,3 +131,288 @@ body {
     transition: .2s background-color;
 }
 
+/* Main section */
+
+#main {
+    width: auto;
+    height: calc(100vh - 4rem);
+    display: grid;
+    grid-template-columns: 65vw auto;
+    /* justify-content: center; */
+    justify-items: center;
+    /* align-items: center; */
+}
+
+/* Content section */
+
+.content-section {
+    height: 35rem;
+    min-height: 25rem;
+    background-color: var(--theme-light-bg);
+    box-shadow: var(--component-shadow);
+    border: .10rem solid var(--theme-light-border);
+}
+
+/* Navigation tabs */
+
+#TabController {
+    width: 50vw;
+    margin-top: 2rem;
+}
+
+.TabContainer {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: var(--theme-light-bg-lvl2);
+}
+
+.Tab {
+    padding: .5rem;
+    background-color: transparent;
+    border: .15rem solid transparent;
+}
+
+.Tab[data-active="true"] {
+    border-bottom: .15rem solid var(--secondary-color);
+    transition: 0.2s border-bottom;
+}
+
+.Tab[data-active="false"] {
+    border-bottom: .15rem solid transparent;
+}
+
+.caption {
+    pointer-events: none;
+    padding: 0.4rem;
+}
+
+.Tab:hover .caption {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: .3rem;
+    transition: 0.5s all;
+}
+
+/* Form section */
+
+#form-wrapper {
+    padding: 1rem;
+    width: auto;
+    height: calc(100% - 3.5rem);
+}
+
+/* Form components section */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.label {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.input {
+    appearance: none;
+    border: .1rem solid var(--theme-light-border);
+    height: 2rem;
+    padding-left: .2rem;
+}
+
+.input:focus {
+    box-shadow: var(--input-focus-shadow);
+    border-radius: .10rem;
+}
+
+.input::placeholder {
+    color: var(--input-placeholder-color);
+}
+
+.input:hover {
+    transition: 0.2s box-shadow;
+}
+
+.button {
+    margin-top: 1.5rem;
+    background-color: var(--button-bg);
+    border: none;
+    height: 2.85rem;
+    color: var(--primary-color-fg);
+    border-radius: .2rem;
+}
+
+.button:focus {
+    box-shadow: var(--button-shadow-bg);
+    transition: 0.2s box-shadow;
+}
+
+/* Error section */
+
+.error {
+    width: 15rem;
+    padding: 0.8rem;
+    background-color: var(--error-color);
+    color: var(--primary-color-fg);
+    border-radius: .2rem;
+}
+
+#error {
+    animation: show-modal 0.5s linear;
+}
+
+#error:focus {
+    box-shadow: 0 0 0 0.25rem rgb(250 128 114 / 50%);
+    transition: 0.2s box-shadow;
+}
+
+#close {
+    cursor: pointer;
+}
+
+#close:hover {
+    color: var(--secondary-color-fg);
+    transition: 0.2s color;
+}
+
+#close::before {
+    background-color: inherit;
+}
+
+#modal-text {
+    margin-top: .5rem;
+}
+
+/* Result section */
+
+.result {
+    width: 15rem;
+    padding: 0.8rem;
+    background-color: var(--result-color);
+    color: var(--primary-color-fg);
+    border-radius: .2rem;
+    animation: show-modal 0.5s linear;
+}
+
+
+#result:focus {
+    box-shadow: var(--result-shadow);
+}
+
+#result-title {
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+#modal-text {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* History section */
+
+#HistoryController {
+    width: 30rem;
+    margin-top: 2rem;
+}
+
+.subtitle {
+    background-color: var(--theme-light-bg-lvl2);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: .1rem solid var(--theme-light-border);
+}
+
+#history-wrapper {
+    height: calc(100% - 5rem);
+    padding: 1rem;
+    padding-right: .5rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#history-wrapper::-webkit-scrollbar {
+    width: 1rem;
+    background-color: var(--scrollbar-bg);
+}
+
+/* Record section */
+
+.record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--record-bg);
+    border-radius: 0.2rem;
+    box-shadow: var(--component-shadow);
+    margin-bottom: 0.5rem;
+    color: var(--primary-color-fg);
+}
+
+.record-close {
+    text-align: center;
+    line-height: auto;
+    cursor: pointer;
+}
+
+.record-close:hover {
+    color: var(--secondary-color-fg);
+}
+
+.record-close:active {
+    transition: 0.2s background-color;
+    color: var(--secondary-color-fg);
+    transform: scale(0.9);
+}
+
+
+/* Animations section */
+
+article.container {
+    animation: show 0.5s ease-in-out;
+}
+
+@keyframes show {
+    from {
+        transform: translateY(33%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes show-modal {
+    from {
+        transform: translateX(33%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes close-modal {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-33%);
+        opacity: 0;
+    }
+    
+}
