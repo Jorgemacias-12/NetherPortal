@@ -6,15 +6,12 @@ let counter = 0;
 document.addEventListener('DOMContentLoaded', () => {
 
 	// Establecer operación por defecto en localStorage
-
 	localStorage.setItem('operation', 'nether');
-	console.trace(localStorage.getItem('operation'));
 
 	// Inicializar validador de campos
 	addInputListeners();
 
 	// Comprobar si ya hay coordendas almacenadas en el localStorage
-
 	if (localStorage.getItem('coordinates_record') == null) results = [];
 
 	if (localStorage.getItem('coordinates_record') != null) {
@@ -25,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
-
+	// Inicializar el comportamiento de las pestañas (formularios)
 	initTabs();
 
 	// EventListeners
@@ -38,10 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// Atajo al document.getElementById()
 const $ = (id) => {
 	return document.getElementById(id);
 }
 
+// Añadir evento(s) de validación a los campos
 function addInputListeners() {
 
 	setInputFilter($('coord_x'), (value) => {
@@ -54,6 +53,8 @@ function addInputListeners() {
 
 }
 
+// Validar los formularios, y postiormente calcular 
+// las nuevas coordenadas
 function validateForm() {
 
 	let fieldCoordX;
@@ -95,6 +96,7 @@ function validateForm() {
 
 }
 
+// Recibe las coordenadas de los inputs, y hace el calculo
 function calculateNewCoords(coordinateX, coordinateZ) {
 
 	let operation;
@@ -130,12 +132,14 @@ function calculateNewCoords(coordinateX, coordinateZ) {
 
 	results.push(resultObject);
 
+	// Almacenar el arreglo de coordenadas en el localstorage
 	localStorage.setItem('coordinates_record', JSON.stringify(results));
 
-	console.trace(`Data available ${JSON.stringify(results)}`);
-
+	// Generar los componentes para representar las coordenadas
+	// anteriormente calculadas
 	showRecords();
 
+	// Cerrar el modal de resultado después de 4seg
 	setTimeout(() => {
 
 		closeModal();
@@ -144,6 +148,9 @@ function calculateNewCoords(coordinateX, coordinateZ) {
 
 }
 
+// Obtiene un template, obtiene el arreglo de objetos
+// que contiene la coordenada(s), y los inserta en un
+// contenedor e inicializar aspectos y funcionalidad.
 function showRecords() {
 
 	let container;
@@ -160,8 +167,6 @@ function showRecords() {
 	container = $('history-wrapper');
 
 	container.innerHTML = ``;
-
-	// console.log(results);
 
 	request.open('GET', '../templates/record.html');
 
@@ -208,6 +213,9 @@ function showRecords() {
 
 }
 
+// Limpiar el localStorage, y la variable que almacena los objetos
+// al mismo tiempo animar los objetos de la UI para posteriormente
+// eliminarlos (almacenamiento, UI)
 function cleanStorage() {
 
 	localStorage.removeItem('coordinates_record');
@@ -236,10 +244,10 @@ function cleanStorage() {
 
 }
 
+// Permite eliminar de la UI y del localStorage
+// el elemento dado por los argumentos index, y
+// target.
 function closeRecord(index, target) {
-
-	// Añadir animación al contenedor
-	console.trace(target.parentNode);
 
 	target = target.parentNode;
 
@@ -253,8 +261,6 @@ function closeRecord(index, target) {
 
 	index = results.findIndex(results => results.id === index + 1);
 
-	console.trace('finded index ' + index);
-
 	results.splice(index, 1);
 
 	// Actualizar localstorage
@@ -265,6 +271,8 @@ function closeRecord(index, target) {
 
 }
 
+// Permite insertar el template dado (error | result )
+// y lo inserta dentro del contenedor dado.
 function createModal(message, isError) {
 
 	let request;
@@ -291,17 +299,13 @@ function createModal(message, isError) {
 		modalTextRef.innerText = message;
 	});
 
-
-
 	request.open('GET', `../templates/${modalType}.html`);
 
 	request.send();
 
-	// modalTextRef = 
-
-
 }
 
+// Elimina el template dado del contenedor
 function closeModal(isError) {
 
 	let modalType;
@@ -324,7 +328,10 @@ function closeModal(isError) {
 
 }
 
-
+// Obtiene los formularios para el calculo
+// de las coordenadas (nether, overworld)
+// e inicializa validadores de campos de 
+// texto.
 function GetForm(form) {
 
 	let request;
@@ -355,6 +362,8 @@ function GetForm(form) {
 
 }
 
+// Cambia el indicador de estado además de
+// cargar el template solicitado. 
 function changeTab(event) {
 
 	event.stopPropagation();
@@ -390,6 +399,8 @@ function changeTab(event) {
 
 }
 
+// Inicializa el comportamiento de las pestañas
+// aquí se invoca la funcion changeTab.
 function initTabs() {
 
 	let tabs;
