@@ -136,6 +136,12 @@ function calculateNewCoords(coordinateX, coordinateZ) {
 
 	showRecords();
 
+	setTimeout(() => {
+
+		closeModal();
+
+	}, 4000);
+
 }
 
 function showRecords() {
