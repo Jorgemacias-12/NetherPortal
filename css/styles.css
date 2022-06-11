@@ -330,7 +330,7 @@ body {
 }
 
 #history-wrapper {
-    height: calc(100% - 5rem);
+    height: calc(100% - 8.2rem);
     padding: 1rem;
     padding-right: .5rem;
     overflow-y: scroll;
@@ -359,6 +359,10 @@ body {
     color: var(--primary-color-fg);
 }
 
+.record-closing {
+    animation: disappear 0.2s linear;
+}
+
 .record-close {
     text-align: center;
     line-height: auto;
@@ -375,6 +379,27 @@ body {
     transform: scale(0.9);
 }
 
+.record-clean-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    background-color: var(--theme-light-bg-lvl2);
+    border-top: .1rem solid var(--theme-light-border);
+    border-bottom: .1rem solid var(--theme-light-border);
+}
+
+#recordCleaner {
+    border: none;
+    background-color: var(--button-bg);
+    color: var(--primary-color-fg);
+    padding: 0.5rem;
+}
+
+#recordCleaner:focus {
+    box-shadow: var(--button-shadow-bg);
+    transition: 0.2s box-shadow;
+}
 
 /* Animations section */
 
@@ -415,4 +440,15 @@ article.container {
         opacity: 0;
     }
     
+}
+
+@keyframes disappear {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
 }
