@@ -333,13 +333,19 @@ function GetForm(form) {
 
 		wrapper.innerHTML = request.responseText;
 
+		setInputFilter($('coord_x'), (value) => {
+			return /^-?\d*[.,]?\d*$/.test(value);
+		});
+
+		setInputFilter($('coord_z'), (value) => {
+			return /^-?\d*[.,]?\d*$/.test(value);
+		});
+
 	});
 
 	request.open('GET', `../templates/${form}.html`, true);
 
 	request.send();
-
-	addInputListeners();
 
 }
 

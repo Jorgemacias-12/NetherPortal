@@ -14,15 +14,3 @@ function setInputFilter(textbox, inputFilter) {
         });
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    setInputFilter(document.getElementById("coord-x"), function (value) {
-        return /^-?\d*[.,]?\d*$/.test(value);
-    });
-
-    setInputFilter(document.getElementById("coord-z"), function (value) {
-        return /^-?\d*[.,]?\d*$/.test(value);
-    });
-
-})
