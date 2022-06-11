@@ -1,4 +1,4 @@
-@media screen and (min-width: 200px) and (max-width: 1200px) {
+@media screen and (min-width: 0px) and (max-width: 1200px) {
 
   body {
     overflow-y: scroll;
@@ -61,12 +61,16 @@
     margin: 0;
   }
 
-  .record {
-    display: block;
-  }
-
   .record-x {
     margin-top: 0.5rem;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  
+  .record {
+    display: block;
   }
 
 }
