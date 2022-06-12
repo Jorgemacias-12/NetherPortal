@@ -1,6 +1,6 @@
 
 let results;
-
+let isDarkTheme = false;
 let counter = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Inicializar el comportamiento de las pestañas (formularios)
 	initTabs();
 
+	// Cargar tema de aplicación
+	loadTheme();
+
 	// EventListeners
+
+	$('header-menu').addEventListener('click', () => {
+
+		themeSwitcher();
+
+	});
 
 	$('calculate').addEventListener('click', () => {
 
@@ -38,6 +47,107 @@ document.addEventListener('DOMContentLoaded', () => {
 // Atajo al document.getElementById()
 const $ = (id) => {
 	return document.getElementById(id);
+}
+
+function loadTheme() {
+
+	let theme;
+	let indicatorRef;
+
+	theme = localStorage.getItem('theme');
+
+	isDarkTheme = theme === "dark" ? true : false;
+
+	indicatorRef = $('header-menu');
+
+	indicatorRef.classList = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+
+	document.documentElement.style.colorScheme = theme;
+
+	applyTheme(theme);
+
+}
+
+function themeSwitcher() {
+
+	let theme;
+	let indicatorRef;
+	let data_color;
+	let icon;
+
+	isDarkTheme = !isDarkTheme;
+
+	indicatorRef = $('header-menu');
+
+	theme = isDarkTheme ? "dark" : "light";
+
+	icon = isDarkTheme ? "fas fa-sun" : "fas fa-moon";
+
+	data_color = isDarkTheme ? "0" : "1";
+
+	indicatorRef.setAttribute('data-color', data_color);
+	indicatorRef.classList = icon;
+
+	localStorage.setItem('theme', theme);
+
+	document.documentElement.style.colorScheme = theme;
+
+	applyTheme(theme);
+
+}
+
+function applyTheme(theme) {
+
+	let sectionContainers;
+	let tabController;
+	let buttonCaptions;
+	let subtitle;
+	let deleteRecordsButton;
+	let formInputs;
+	let formLabels;
+	let recordsContainer;
+
+	sectionContainers = document.querySelectorAll('.content-section');
+	buttonCaptions = document.querySelectorAll('.caption');
+	formInputs = document.querySelectorAll('input');
+	formLabels = document.querySelectorAll('.label')
+	subtitle = document.querySelector('.subtitle');
+	deleteRecordsButton = document.querySelector('.record-clean-container');
+	tabController = $('Tabs');
+	recordsContainer = $('history-wrapper');
+
+	switch (theme) {
+
+		case "light":
+
+			document.body.classList = "light";
+			sectionContainers.forEach(element => element.classList = "content-section light");
+			buttonCaptions.forEach(element => element.style.color = "black");
+			formLabels.forEach(element => element.classList = "label light");
+			formInputs.forEach(element => element.classList = "input light");
+			subtitle.classList = "subtitle light";
+			deleteRecordsButton.classList = "record-clean-container light";
+			tabController.classList = "TabContainer light";
+			recordsContainer.classList = "light";
+
+			break;
+
+		case "dark":
+
+			document.body.classList = "dark";
+			sectionContainers.forEach(element => element.classList = "content-section dark");
+			buttonCaptions.forEach(element => element.style.color = "white");
+			formLabels.forEach(element => element.classList = "label dark");
+			formInputs.forEach(element => element.classList = "input dark");
+			subtitle.classList = "subtitle dark";
+			deleteRecordsButton.classList = "record-clean-container dark";
+			tabController.classList = "TabContainer dark";
+			recordsContainer.classList = "dark";
+
+			break;
+
+	}
+
 }
 
 // Añadir evento(s) de validación a los campos
@@ -216,7 +326,7 @@ function showRecords() {
 // Limpiar el localStorage, y la variable que almacena los objetos
 // al mismo tiempo animar los objetos de la UI para posteriormente
 // eliminarlos (almacenamiento, UI)
-function cleanStorage() {
+function clearStorage() {
 
 	localStorage.removeItem('coordinates_record');
 
@@ -228,13 +338,11 @@ function cleanStorage() {
 
 	recordsRef = records_wrapper.childNodes;
 
-	console.trace(recordsRef);
-
 	for (let i = 0; i < recordsRef.length; i++) {
 
 		recordsRef[i].classList.add('record-closing');
 
-		recordsRef[i].addEventListener('animationend', () =>{ 
+		recordsRef[i].addEventListener('animationend', () => {
 
 			records_wrapper.innerHTML = ``;
 
@@ -314,6 +422,8 @@ function closeModal(isError) {
 
 	let modal = $(modalType);
 
+	if (modal == null || modal == undefined) return;
+
 	modal.style.animation = `close-modal 0.5s linear`;
 
 	// Animation close modal - archivo styles.css
@@ -353,6 +463,8 @@ function GetForm(form) {
 		setInputFilter($('coord_z'), (value) => {
 			return /^-?\d*[.,]?\d*$/.test(value);
 		});
+
+		applyTheme(localStorage.getItem('theme'));
 
 	});
 
