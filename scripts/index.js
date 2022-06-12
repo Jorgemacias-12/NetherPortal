@@ -407,7 +407,7 @@ function createModal(message, isError) {
 		modalTextRef.innerText = message;
 	});
 
-	request.open('GET', `${window.location.href}/templates/${modalType}.html`);
+	request.open('GET', `${window.location.href}templates/${modalType}.html`);
 
 	request.send();
 
@@ -468,7 +468,7 @@ function GetForm(form) {
 
 	});
 
-	request.open('GET', `../templates/${form}.html`, true);
+	request.open('GET', `${window.location.href}/templates/${form}.html`, true);
 
 	request.send();
 
