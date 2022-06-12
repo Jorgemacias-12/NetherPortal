@@ -1,258 +1,76 @@
-@media screen and (max-width: 1280px) {
-    .app {
-        grid-template-columns: 65% 35%;
-    }
-    .title-container {
-        width: auto;
-    }
-    .menu-container {
-        width: 60%;
-    }
-    .ul {
-        justify-content: flex-end;
-    }
-    .coords-form {
-        height: 65%;
-    }
-    .select {
-        width: 40%;
-        height: 30px;
-    }
-    .input {
-        margin: 0px;
-    }
-    .buttonGroup {
-        margin-top: 10px;
-    }
-    .error-container {
-        height: 20%;
-        margin-top: 5px;
-    }
-    .error {
-        width: 60%;
-    }
-    .error-text {
-        font-size: 16px;
-    }
-    .result-container {
-        margin-top: 5px;
-    }
-    .result {
-        width: 60%;
-        height: 80%;
-    }
-    .success-text {
-        font-size: 15px;
-    }
+@media screen and (min-width: 0px) and (max-width: 1200px) {
+
+  body {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .header {
+
+    flex-direction: column;
+    height: auto;
+
+  }
+
+  .header-container {
+    height: 4rem;
+  }
+
+  #header-icon {
+    display: none;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .nav {
+    width: 100%;
+    padding-right: 0px;
+    flex-flow: column;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+
+  .nav-link {
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+  }
+
+  #header-menu {
+    padding: 0;
+    margin-top: 0.4rem;
+  }
+
+  #main {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem 0rem;
+  }
+
+  #TabController {
+    width: 85%;
+  }
+
+  #HistoryController {
+    width: 85%;
+    margin: 0;
+  }
+
+  .record-x {
+    margin-top: 0.5rem;
+  }
+
 }
 
-@media screen and (max-width: 800px) {
-    .app {
-        display: grid;
-        grid-template-areas: "header" "content" "coords";
-        grid-template-columns: 100%;
-        grid-template-rows: 10% 50% 40%;
-    }
-    .header {
-        flex-flow: column;
-    }
-    .header>.title-container {
-        width: 100%;
-        height: 50%;
-        justify-content: center;
-    }
-    .header>.menu-container {
-        width: 100%;
-        height: 50%;
-    }
-    .menu-container>.ul {
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .coords-form {
-        width: 70%;
-        height: 80%;
-    }
-    .os-container {
-        height: 15%;
-    }
-    .select {
-        width: 40%;
-    }
-    .input {
-        margin: 0px;
-    }
-    .error-container {
-        margin-top: 20px;
-    }
-    .error {
-        width: 65%;
-    }
-    .result {
-        width: 80%;
-        align-items: center;
-        height: 80%;
-    }
-    .success-text {
-        font-size: 15px;
-    }
-    .history {
-        width: 80%;
-        height: 35%;
-    }
-}
+@media screen and (max-width: 480px) {
+  
+  .record {
+    display: block;
+  }
 
-@media screen and (max-width: 547px) {
-    .link {
-        text-align: center;
-        display: block;
-        width: 100%;
-        padding: 5px;
-    }
-    .select {
-        font-size: 15px;
-    }
-    .inputGroup {
-        height: 22%;
-    }
-    .inputGroup>.text {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    .buttonGroup {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .coords-form {
-        width: 80%;
-    }
-    .error-container {
-        height: 25%;
-    }
-    .error {
-        width: 75%;
-    }
-    .success-text {
-        line-height: 36px;
-    }
-}
-
-@media screen and (max-width: 506px) {
-    .page-title {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 476px) {
-    .link {
-        font-size: 12px;
-    }
-    .text:first-child {
-        font-size: 12px;
-    }
-    .select {
-        margin-left: 15px;
-        margin-right: 0px;
-        width: 48%;
-    }
-    .input {
-        width: 35%;
-    }
-    .button {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .error-container {
-        margin-top: 2px;
-    }
-    .error {
-        width: 80%;
-    }
-    .success-text {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 414px) {
-    .app {
-        grid-template-rows: 15% 45% 40%;
-    }
-    .header>.title-container {
-        height: 30%;
-    }
-    .header>.menu-container {
-        height: auto;
-    }
-    .page-title {
-        font-size: 12px;
-    }
-    .link {
-        font-size: 12px;
-    }
-    .menu-container>.ul {
-        height: 100%;
-        flex-flow: column;
-    }
-    .success-text {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .error>.error-text {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .app {
-        grid-template-rows: 15% 45% 40%;
-    }
-    .header>.title-container {
-        height: 30%;
-    }
-    .header>.menu-container {
-        height: auto;
-    }
-    .page-title {
-        font-size: 12px;
-    }
-    .link {
-        font-size: 12px;
-    }
-    .menu-container>.ul {
-        height: 100%;
-        flex-flow: column;
-    }
-}
-
-@media screen and (max-height: 650px) and (max-width: 506px) {
-    .app {
-        grid-template-rows: 20% 40% 40%;
-    }
-    .coords-form {
-        margin-top: 20px;
-        height: 90%;
-    }
-    .select {
-        font-size: 12px;
-        height: 30px;
-    }
-    .buttonGroup {
-        margin-top: 2px;
-        margin-bottom: 5px;
-    }
-    .button {
-        width: auto;
-        height: auto;
-        font-size: 14px;
-    }
-    .inputGroup>.text {
-        margin-top: 0px;
-        margin-bottom: 5px;
-    }
 }

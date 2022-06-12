@@ -1,99 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="resources/netherrack.png" type="image/png">
-    <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    <title> NetherPortal - conversión de coordenadas </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta name="description"
+  content="Sitio web para calcular las coordenadas de un portal, dando coordenadas en la dimensión Nether como en el Overworld">
+  <title> Minecraft Coordinates Calculator </title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" href="resources/netherrack.png" type="image/png">
+  <script src="scripts/validator.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="https://kit.fontawesome.com/7f4f5e3479.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="app">
-        <header class="header">
-            <div class="title-container">
-                <img src="resources/netherrack.png" class="img" alt="imagen del bloque netherrack del nether">
-                <h1 class="page-title">
-                    Conversor de coordenadas Overworld - Nether
-                </h1>
-            </div>
-            <div class="menu-container">
-                <ul class="ul">
-                    <li class="li">
-                        <a href="#" class="link" target="_blank">
-                            Acerca de la página
-                        </a>
-                    </li>
-                    <li class="li">
-                        <a href="https://github.com/Jorgemacias-12" class="link" target="_blank">
-                            Perfil de GitHub
-                        </a>
-                    </li>
-                    <li class="li">
-                        <a href="#" class="link" target="_blank">
-                            Ver mi portafolio
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
 
-        <div class="content">
-            <form action="scripts/app.js" id="form" class="coords-form" onsubmit="return false;">
-                <div class="os-container">
-                    <p class="text">
-                        Convertir coordenadas
-                    </p>
-                    <select id="operation-value" class="select">
-                            <option value="ow" selected class="opt"> Overworld a Nether</option>
-                            <option value="ne" class="opt"> Nether a Overworld </option>
-                    </select>
-                </div>
-                <div class="data-container" id="form-components">
-                    <div class="inputGroup">
-                        <label for="cord-x" class="text">
-                            Coordenada X:
-                        </label>
-                        <input type="text" class="input" id="cord-x">
-                    </div>
+  <header class="header">
 
-                    <div class="inputGroup">
-                        <label for="cord-z" class="text">
-                            Coordenada Z:
-                        </label>
-                        <input type="text" class="input" id="cord-z">
-                    </div>
+    <section class="header-container" id="header-container">
 
-                    <div class="buttonGroup">
-                        <button class="button" id="btn-cord">
-                            Mostrar coordenadas
-                        </button>
-                    </div>
+      <img src="resources/netherrack.png" 
+           alt="" 
+           class="img" 
+           id="header-icon"
+           width="32"
+           height="32">
 
+      <h1 class="title">
+        Conversor de coordenadas
+      </h1>
 
-                    <div class="error-container" id="c-error">
+    </section>
 
-                    </div>
+    <nav class="nav header-container" id="nav">
 
-                </div>
-            </form>
+      <a href="" target="_blank" class="nav-link">Acerca de la página </a>
+
+      <a href="https://github.com/Jorgemacias-12/NetherPortal" target="_blank" class="nav-link">Ver código</a>
+
+      <i class="fas fa-moon" data-color="1" id="header-menu"></i>
+
+    </nav>
+
+  </header>
+
+  <main class="page-content" id="main">
+
+    <section class="content-section" id="TabController">
+
+      <nav class="TabContainer" id="Tabs">
+
+        <button type="button" data-active="true" class="Tab">
+          <span class="caption">Nether</span>
+        </button>
+        
+        <button type="button" data-active="false" class="Tab">
+          <span class="caption">Overworld</span>
+        </button>
+
+      </nav>
+
+      <div id="form-wrapper" class="wrapper">
+
+        <div class="form-group">
+
+          <label for="coord_x" class="label">
+            Coordenada X
+          </label>
+          
+          <input type="text" placeholder="366" name="" id="coord_x" class="input">
+
+        </div>
+        
+        <div class="form-group">
+
+          <label for="coord_z" class="label">
+            Coordenada Z
+          </label>
+          
+          <input type="text" placeholder="768" name="" id="coord_z" class="input">
+        
+        </div>
+        
+        <div class="form-group">
+
+          <button type="button" class="button" id="calculate">
+            Calcular coordenadas
+          </button>
+
         </div>
 
-        <section class="coords">
-            <div class="coords-title">
-                <h2 class="text"> Historial de coordenadas </h2>
-            </div>
-            <div class="coords-container" id="coords-history">
-                
-            </div>
-        </section>
+        <div class="form-group" id="modal-container">
 
-    </div>
-    <script src="scripts/validator.js"></script>
-    <script src="scripts/success.js"></script>
-    <script src="scripts/error.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="https://kit.fontawesome.com/7f4f5e3479.js" crossorigin="anonymous"></script>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="content-section" id="HistoryController">
+
+      <h2 class="subtitle">Historial de coordenadas</h2>
+
+      <div id="history-wrapper">
+
+      </div>
+
+      <div class="record-clean-container">
+
+        <button type="button" id="recordCleaner" onclick="clearStorage();">
+          <i class="fas fa-trash"></i>
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
 </body>
+
 </html>

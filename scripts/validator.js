@@ -14,11 +14,3 @@ function setInputFilter(textbox, inputFilter) {
         });
     });
 }
-
-setInputFilter(document.getElementById("cord-x"), function (value) {
-    return /^-?\d*[.,]?\d*$/.test(value);
-});
-
-setInputFilter(document.getElementById("cord-z"), function (value) {
-    return /^-?\d*[.,]?\d*$/.test(value);
-});
