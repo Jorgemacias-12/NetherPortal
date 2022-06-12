@@ -278,7 +278,7 @@ function showRecords() {
 
 	container.innerHTML = ``;
 
-	request.open('GET', '../templates/record.html');
+	request.open('GET', `${window.location.href}/templates/record.html`);
 
 	request.send();
 
@@ -407,7 +407,7 @@ function createModal(message, isError) {
 		modalTextRef.innerText = message;
 	});
 
-	request.open('GET', `../templates/${modalType}.html`);
+	request.open('GET', `${window.location.href}/templates/${modalType}.html`);
 
 	request.send();
 
