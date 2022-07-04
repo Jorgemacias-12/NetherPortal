@@ -3,6 +3,11 @@ let results;
 let isDarkTheme = false;
 let counter = 0;
 
+// Atajo al document.getElementById()
+const $ = (id) => {
+	return document.getElementById(id);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	// Establecer operación por defecto en localStorage
@@ -44,10 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Atajo al document.getElementById()
-const $ = (id) => {
-	return document.getElementById(id);
-}
 
 function loadTheme() {
 
@@ -122,7 +123,6 @@ function applyTheme(theme) {
 
 			document.body.classList = "light";
 			sectionContainers.forEach(element => element.classList = "content-section light");
-			buttonCaptions.forEach(element => element.style.color = "black");
 			formLabels.forEach(element => element.classList = "label light");
 			formInputs.forEach(element => element.classList = "input light");
 			subtitle.classList = "subtitle light";
@@ -326,13 +326,15 @@ function showRecords() {
 // Limpiar el localStorage, y la variable que almacena los objetos
 // al mismo tiempo animar los objetos de la UI para posteriormente
 // eliminarlos (almacenamiento, UI)
-function clearStorage() {
+async function clearStorage() {
 
 	localStorage.removeItem('coordinates_record');
 
 	results = [];
 
 	let records_wrapper = $('history-wrapper');
+
+	if (!records_wrapper.hasChildNodes()) return;
 
 	let recordsRef;
 
@@ -480,32 +482,32 @@ function changeTab(event) {
 
 	event.stopPropagation();
 
-	let tabs = document.getElementsByClassName('Tab');
+	let tabs;
+	let currentButton;
 
-	for (let i = 0; i < tabs.length; i++) {
+	tabs = document.querySelectorAll('.Tab');
 
-		tabs[i].setAttribute('data-active', '');
-		tabs[i].id = `${i}`;
+	tabs.forEach((button) => {
 
-	}
+		button.setAttribute('data-active', '');
 
-	let componentRef;
+	});
 
-	componentRef = event.target;
+	currentButton = event.target;
 
-	componentRef.setAttribute('data-active', 'true');
+	currentButton.setAttribute('data-active', 'true');
 
-	if (componentRef.id == 0) {
+	switch (currentButton.id) {
 
-		localStorage.setItem('operation', 'nether');
-		GetForm('nether');
+		case "nether":
+			localStorage.setItem('operation', currentButton.id);
+			GetForm(currentButton.id);
+			break;
 
-	}
-
-	if (componentRef.id == 1) {
-
-		localStorage.setItem('operation', 'overworld');
-		GetForm('overworld');
+		case "overworld":
+			localStorage.setItem('operation', currentButton.id);
+			GetForm(currentButton.id);
+			break;
 
 	}
 
@@ -526,3 +528,9 @@ function initTabs() {
 	}
 
 }
+
+// Esto ayuda a reconocer la(s) funcion(es)
+// dentro de html onclick :D
+window.closeModal = closeModal;
+window.clearStorage = clearStorage;
+window.validateForm = validateForm;
