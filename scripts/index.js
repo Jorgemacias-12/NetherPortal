@@ -533,3 +533,4 @@ function initTabs() {
 // dentro de html onclick :D
 window.closeModal = closeModal;
 window.clearStorage = clearStorage;
+window.validateForm = validateForm;
