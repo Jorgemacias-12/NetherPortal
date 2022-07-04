@@ -3,6 +3,11 @@ let results;
 let isDarkTheme = false;
 let counter = 0;
 
+// Atajo al document.getElementById()
+const $ = (id) => {
+	return document.getElementById(id);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	// Establecer operación por defecto en localStorage
@@ -44,10 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Atajo al document.getElementById()
-const $ = (id) => {
-	return document.getElementById(id);
-}
 
 function loadTheme() {
 
@@ -325,7 +326,7 @@ function showRecords() {
 // Limpiar el localStorage, y la variable que almacena los objetos
 // al mismo tiempo animar los objetos de la UI para posteriormente
 // eliminarlos (almacenamiento, UI)
-function clearStorage() {
+async function clearStorage() {
 
 	localStorage.removeItem('coordinates_record');
 
@@ -333,11 +334,11 @@ function clearStorage() {
 
 	let records_wrapper = $('history-wrapper');
 
+	if (!records_wrapper.hasChildNodes()) return;
+
 	let recordsRef;
 
 	recordsRef = records_wrapper.childNodes;
-
-	if (recordsRef.length == 0) return;
 
 	for (let i = 0; i < recordsRef.length; i++) {
 
@@ -486,8 +487,8 @@ function changeTab(event) {
 
 	tabs = document.querySelectorAll('.Tab');
 
-	tabs.forEach( (button) => {
-		
+	tabs.forEach((button) => {
+
 		button.setAttribute('data-active', '');
 
 	});
@@ -527,3 +528,8 @@ function initTabs() {
 	}
 
 }
+
+// Esto ayuda a reconocer la(s) funcion(es)
+// dentro de html onclick :D
+window.closeModal = closeModal;
+window.clearStorage = clearStorage;

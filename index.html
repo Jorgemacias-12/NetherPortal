@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="shortcut icon" href="resources/netherrack.png" type="image/png">
   <script src="scripts/validator.js"></script>
-  <script src="scripts/index.js"></script>
+  <script type="module" src="scripts/index.js"></script>
   <script src="https://kit.fontawesome.com/7f4f5e3479.js" crossorigin="anonymous"></script>
 </head>
 
@@ -106,13 +106,12 @@
 
       <h2 class="subtitle light">Historial de coordenadas</h2>
 
-      <div id="history-wrapper">
-
-      </div>
+      <div id="history-wrapper"></div>
 
       <div class="record-clean-container">
 
-        <button type="button" id="recordCleaner" onclick="clearStorage();">
+        <button type="button" id="recordCleaner" 
+        onclick="clearStorage();">
           <i class="fas fa-trash"></i>
         </button>
 

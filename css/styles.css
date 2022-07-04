@@ -226,6 +226,10 @@ body {
     padding: 0.4rem;
 }
 
+.caption.light {
+    color: black;
+}
+
 .Tab:hover {
     background-color: var(--tab-hv-bg);
     transition: 0.5s all;
