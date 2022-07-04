@@ -122,7 +122,6 @@ function applyTheme(theme) {
 
 			document.body.classList = "light";
 			sectionContainers.forEach(element => element.classList = "content-section light");
-			buttonCaptions.forEach(element => element.style.color = "black");
 			formLabels.forEach(element => element.classList = "label light");
 			formInputs.forEach(element => element.classList = "input light");
 			subtitle.classList = "subtitle light";
@@ -338,6 +337,8 @@ function clearStorage() {
 
 	recordsRef = records_wrapper.childNodes;
 
+	if (recordsRef.length == 0) return;
+
 	for (let i = 0; i < recordsRef.length; i++) {
 
 		recordsRef[i].classList.add('record-closing');
@@ -480,32 +481,32 @@ function changeTab(event) {
 
 	event.stopPropagation();
 
-	let tabs = document.getElementsByClassName('Tab');
+	let tabs;
+	let currentButton;
 
-	for (let i = 0; i < tabs.length; i++) {
+	tabs = document.querySelectorAll('.Tab');
 
-		tabs[i].setAttribute('data-active', '');
-		tabs[i].id = `${i}`;
+	tabs.forEach( (button) => {
+		
+		button.setAttribute('data-active', '');
 
-	}
+	});
 
-	let componentRef;
+	currentButton = event.target;
 
-	componentRef = event.target;
+	currentButton.setAttribute('data-active', 'true');
 
-	componentRef.setAttribute('data-active', 'true');
+	switch (componentRef.id) {
 
-	if (componentRef.id == 0) {
+		case "nether":
+			localStorage.setItem('operation', componentRef.id);
+			GetForm(componentRef.id);
+			break;
 
-		localStorage.setItem('operation', 'nether');
-		GetForm('nether');
-
-	}
-
-	if (componentRef.id == 1) {
-
-		localStorage.setItem('operation', 'overworld');
-		GetForm('overworld');
+		case "overworld":
+			localStorage.setItem('operation', componentRef.id);
+			GetForm(componentRef.id);
+			break;
 
 	}
 
