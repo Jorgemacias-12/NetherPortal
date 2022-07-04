@@ -497,16 +497,16 @@ function changeTab(event) {
 
 	currentButton.setAttribute('data-active', 'true');
 
-	switch (componentRef.id) {
+	switch (currentButton.id) {
 
 		case "nether":
-			localStorage.setItem('operation', componentRef.id);
-			GetForm(componentRef.id);
+			localStorage.setItem('operation', currentButton.id);
+			GetForm(currentButton.id);
 			break;
 
 		case "overworld":
-			localStorage.setItem('operation', componentRef.id);
-			GetForm(componentRef.id);
+			localStorage.setItem('operation', currentButton.id);
+			GetForm(currentButton.id);
 			break;
 
 	}
