@@ -123,6 +123,7 @@ function applyTheme(theme) {
 
 			document.body.classList = "light";
 			sectionContainers.forEach(element => element.classList = "content-section light");
+			buttonCaptions.forEach(element => element.classList = "caption light");
 			formLabels.forEach(element => element.classList = "label light");
 			formInputs.forEach(element => element.classList = "input light");
 			subtitle.classList = "subtitle light";
@@ -136,7 +137,7 @@ function applyTheme(theme) {
 
 			document.body.classList = "dark";
 			sectionContainers.forEach(element => element.classList = "content-section dark");
-			buttonCaptions.forEach(element => element.style.color = "white");
+			buttonCaptions.forEach(element => element.classList = "caption dark");
 			formLabels.forEach(element => element.classList = "label dark");
 			formInputs.forEach(element => element.classList = "input dark");
 			subtitle.classList = "subtitle dark";
