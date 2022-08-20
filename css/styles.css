@@ -227,8 +227,13 @@ body {
 }
 
 .caption.light {
-    color: black;
+    color: var(--secondary-color-fg);
 }
+
+.caption.dark {
+    color: var(--primary-color-fg);
+}
+
 
 .Tab:hover {
     background-color: var(--tab-hv-bg);
